@@ -5,9 +5,17 @@
 #ifndef SORT_METHODS_SORT_H
 #define SORT_METHODS_SORT_H
 
+#include <iostream>
+using namespace std;
 
-class Sort {
+template <typename T>
 
+class Sort{
+protected:
+    T *elementos;
+    size_t size;
+public:
+    Sort(T,size_t);
 };
 
 
