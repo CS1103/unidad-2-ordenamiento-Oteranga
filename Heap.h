@@ -34,6 +34,18 @@ void heapSort(vector<int> arr, int n)
         heapify(arr, i, 0); 
     } 
 } 
+    
+    
+    void create(){
+        fstream file;
+        file.open("Proyecto4.csv",ios::out);
+        int i=this->v.size();
+        while(i!=0)
+            for(auto it=this->v.begin();it!=this->v.end();it++){
+                file<<*it<<" ";
+                i--;
+            }
+    }
 
 
 };
