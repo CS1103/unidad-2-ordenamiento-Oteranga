@@ -31,5 +31,14 @@ class QuickSort : public Sort {
             quickSort(elements, 0, size-1);
         }
 
-        inline string name() { return "QuickSort"; }
+    void create(){
+        fstream file;
+        file.open("Proyecto2.csv",ios::out);
+        int i=this->v.size();
+        while(i!=0)
+            for(auto it=this->v.begin();it!=this->v.end();it++){
+                file<<*it<<" ";
+                i--;
+            }
+    }
 };
