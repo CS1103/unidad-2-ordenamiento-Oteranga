@@ -1,22 +1,43 @@
-#include "Sort.h"
-#include <vector>
+//
+// Created by Alejandro  Otero on 2019-09-26.
+//
 
-class ShellSort : public Sort {       
-    public:
-        ShellSort(int *elements, size_t size) : Sort(elements, size) {}
+#ifndef PROYECTO_2_SHELL_H
+#define PROYECTO_2_SHELL_H
 
-        void execute() {
-            for (int gap = size / 2; gap > 0; gap /= 2) {
-                for (int i = gap; i < size; i += 1) {
-                    int temp = elements[i];
-                    int j;
-                    for (j = i; j >= gap && elements[j - gap] > temp; j -= gap){
-                        elements[j] = elements[j - gap];
-                    }
-                    elements[j] = temp;
+#endif //PROYECTO_2_SHELL_H
+
+#include "sort.h"
+
+template<typename T>
+class ShellSort: public Sort<T>{
+public:
+    ShellSort(vector<T> v):Sort<T>(v){}
+
+    void shell(vector<T>& vec){
+        int gap=vec.size()/2;
+        while (gap>0){
+            for (T i=gap;i<vec.size();i++){
+                for(T j=i;j>=gap;j-=gap){
+                    if (vec[j]<vec[j-gap]){
+                        swap(vec[j],vec[j-gap]);
+                    }else
+                        break;
                 }
             }
+            gap=gap/2;
         }
+    }
 
-        inline string name() { return "ShellSort"; }
+    void create(){
+        fstream file;
+        file.open("Proyecto.csv",ios::out);
+        int i=this->v.size();
+        while(i!=0)
+            for(auto it=this->v.begin();it!=this->v.end();it++){
+                file<<*it<<" ";
+                i--;
+            }
+    }
+
 };
