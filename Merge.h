@@ -60,5 +60,15 @@ class MergeSort : public Sort {
         mergeSort(elements, 0, size - 1);
         }
 
-        inline string name() { return "MergeSort"; }
+    
+    void create(){
+        fstream file;
+        file.open("Proyecto3.csv",ios::out);
+        int i=this->v.size();
+        while(i!=0)
+            for(auto it=this->v.begin();it!=this->v.end();it++){
+                file<<*it<<" ";
+                i--;
+            }
+    }
 };
