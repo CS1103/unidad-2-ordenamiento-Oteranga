@@ -1,22 +1,26 @@
 //
-// Created by rudri on 9/17/2019.
+// Created by Alejandro  Otero on 2019-09-26.
 //
 
-#ifndef SORT_METHODS_SORT_H
-#define SORT_METHODS_SORT_H
+#ifndef PROYECTO_2_SORT_H
+#define PROYECTO_2_SORT_H
+
+#endif //PROYECTO_2_SORT_H
 
 #include <iostream>
+#include <vector>
+#include "elementos.h"
 using namespace std;
 
 template <typename T>
 
 class Sort{
 protected:
-    T *elementos;
-    size_t size;
+    vector<T> v;
 public:
-    Sort(T,size_t);
+    Sort(vector<T>);
+    //void swap(T& small, T large);
+    virtual void create()=0;
+    //bool *comp(T a, T b);
+
 };
-
-
-#endif //SORT_METHODS_SORT_H
