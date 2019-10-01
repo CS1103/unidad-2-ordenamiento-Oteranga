@@ -1,5 +1,8 @@
 //
-// Created by rudri on 9/17/2019.
+// Created by Alejandro  Otero on 2019-09-26.
 //
+#include "sort.h"
+#include <iostream>
 
-#include "Sort.h"
+template<typename T>
+Sort<T>::Sort(vector<T> v):v(v){}
