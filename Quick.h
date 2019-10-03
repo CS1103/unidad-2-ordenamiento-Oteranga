@@ -1,8 +1,11 @@
-#include "Sort.h"
+#include <vector>
 
+template<typename T>
 class QuickSort : public Sort {
+    private:
+    vector<T> v;
     public:
-        QuickSort(int *elements, size_t size) : Sort(elements, size) {}
+        QuickSort(vector<T> v) : v(v) {}
 
     int partition (int arr[], int right, int left){
         int pivot = arr[left];
