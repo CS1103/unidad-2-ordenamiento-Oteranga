@@ -1,3 +1,5 @@
+#include <vector>
+
 
 template<typename T>
 class MergeSort : public Sort {
