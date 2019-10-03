@@ -1,8 +1,10 @@
-#include "Sort.h"
 
-class MergeSort : public Sort {       
+template<typename T>
+class MergeSort : public Sort {
+    private:
+    vector<T> v;
     public:
-        MergeSort(int *elements, size_t size) : Sort(elements, size) {}
+        MergeSort(vector<T> v) : v(v) {}
 
         void merge(int arr[], int left, int m, int right){
             int i, j, k;
