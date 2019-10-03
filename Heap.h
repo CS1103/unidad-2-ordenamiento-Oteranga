@@ -1,9 +1,12 @@
 #include <vector>
 #include <string>
 
-class HeapSort : public Sort {       
+template <typename T>
+class HeapSort{ 
+    protected:
+    vector<T> v;
     public:
-        HeapSort(int *elements, size_t size) : Sort(elements, size) {}
+        HeapSort(vector<T> v) : v(v) {}
         
         void heapify(int arr[], int n, int i) 
 { 
