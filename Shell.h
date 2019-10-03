@@ -7,12 +7,11 @@
 
 #endif //PROYECTO_2_SHELL_H
 
-#include "sort.h"
 
 template<typename T>
-class ShellSort: public Sort<T>{
+class ShellSort{
 public:
-    ShellSort(vector<T> v):Sort<T>(v){}
+    ShellSort(vector<T> v):v(v){}
 
     void shell(vector<T>& vec){
         int gap=vec.size()/2;
