@@ -5,7 +5,6 @@
 #include <vector>
 #include <fstream>
 #include <string>
-#include "sort.h"
 #include "shell.h"
 #include "quick.h"
 #include "merge.h"
@@ -32,10 +31,12 @@ int main() {
         getline(file, flow,',');
         getline(file, trade_usd,',');
 
-        datos.emplace_back(country_or_area,year,commodity,flow,trade_usd);
+        datos.emplace_back(country_or_area,stoi(year),commodity,flow,stoi(trade_usd));
     }
-
-
+    ShellSort v1(datos);
+    HeapSort v2(datos);
+    MergeSort v3(datos);
+    QuickSort v4(datos);
 
     return 0;
 }
