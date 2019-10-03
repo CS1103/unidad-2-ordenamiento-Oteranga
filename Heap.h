@@ -1,4 +1,5 @@
-#include "sort.h"
+#include <vector>
+#include <string>
 
 class HeapSort : public Sort {       
     public:
